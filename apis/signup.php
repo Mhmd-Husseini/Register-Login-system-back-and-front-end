@@ -31,4 +31,4 @@ if ($username_exists == 0) {
 }
 
 echo json_encode($response);
-?>
+
