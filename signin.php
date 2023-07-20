@@ -10,11 +10,11 @@ where username=?');
 $query->bind_param('s', $username);
 $query->execute();
 $query->store_result();
+$num_rows = $query->num_rows();
 
 $query->bind_result($id, $username, $hashed_password, $first_name, $last_name);
 $query->fetch();
 
-$num_rows = $query->num_rows();
 if ($num_rows == 0) {
     $response['status'] = " user not found ";
 } else {
